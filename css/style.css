@@ -168,7 +168,7 @@ p {
 }
 
 .invio-messaggio {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     height: 60px;
     background-color: var(--grigioSfondoInterno);

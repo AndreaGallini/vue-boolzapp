@@ -79,7 +79,7 @@
             </div>
             <div class="main-body ">
                 <div v-for="(message,index) in contacts[currentChat].messages"
-                    class="messages  d-flex flex-column pt-5">
+                    class="messages  d-flex flex-column pt-5 pb-3">
                     <div :class="[(message.status === 'sent') ? 'message-sent':'message-recived']">
                         <p>{{message.message}}</p>
                         <p class="ora-message">{{message.date}}</p>
