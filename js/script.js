@@ -3,11 +3,12 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            myMessage: '',
             currentChat: 0,
             contacts: [
                 {
                     name: 'Michele',
-                    id: 1,
+                    id: 0,
                     image: '../img/avatar_1.jpg',
                     avatar: '_1',
                     visible: true,
@@ -31,7 +32,7 @@ createApp({
                 },
                 {
                     name: 'Fabio',
-                    id: 2,
+                    id: 1,
                     image: '../img/avatar_2.jpg',
 
                     avatar: '_2',
@@ -56,7 +57,7 @@ createApp({
                 },
                 {
                     name: 'Samuele',
-                    id: 3,
+                    id: 2,
                     image: '../img/avatar_3.jpg',
 
                     avatar: '_3',
@@ -81,7 +82,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro B.',
-                    id: 4,
+                    id: 3,
                     image: '../img/avatar_4.jpg',
 
                     avatar: '_4',
@@ -101,7 +102,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    id: 5,
+                    id: 4,
                     avatar: '_5',
                     image: '../img/avatar_5.jpg',
 
@@ -121,7 +122,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    id: 6,
+                    id: 5,
                     avatar: '_6',
                     image: '../img/avatar_6.jpg',
 
@@ -146,7 +147,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    id: 7,
+                    id: 6,
                     avatar: '_7',
                     image: '../img/avatar_7.jpg',
 
@@ -166,7 +167,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    id: 8,
+                    id: 7,
                     avatar: '_8',
                     image: '../img/avatar_8.jpg',
 
@@ -198,8 +199,14 @@ createApp({
                 return id === item.id
             })
             console.log(id)
-
-
-        }
+        },
+        sendMessage() {
+            activeContact = this.contacts[this.currentChat]
+            activeContact.messages.push({
+                date: '10/10/2022',
+                message: this.myMessage,
+                status: 'sent'
+            })
+        },
     }
 }).mount('#app')
