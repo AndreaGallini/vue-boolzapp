@@ -16,9 +16,83 @@
     <title>Document</title>
 </head>
 
-<body>
-    <div id="app">
+<body class="container-fluid vh-100 my-background">
+    <div id="app" class="container-md my-container p-0 d-flex">
 
+        <div class="right">
+            <div class="sfondoUser d-flex align-items-center justify-content-between">
+                <section class="user d-flex align-items-center">
+                    <img src="./img/avatar_io.jpg" alt="Io" class="cerchio">
+                    <p class=" user-name-io align-items-center">Sofia</p>
+                </section>
+                <section class="utility-user mx-3">
+                    <i class="fa-solid fa-circle-notch mx-2"></i>
+                    <i class="fa-solid fa-message mx-2"></i>
+                    <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+                </section>
+            </div>
+            <section class="notify d-flex px-3">
+                <div class="back-bell">
+                    <i class="fa-solid fa-bell-slash my-bell"></i>
+                </div>
+                <div class="px-3">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <p class="my-sub">Attiva le notifiche desktop</p>
+                </div>
+            </section>
+            <section class="input d-flex align-items-center">
+                <i class="fa-solid fa-magnifying-glass my-lens"></i>
+                <input type="text" class="my-input" placeholder="">
+            </section>
+            <section class="chats">
+                <div class="chat d-flex justify-content-between align-items-center">
+                    <div class="d-flex px-3">
+                        <img src="./img/avatar_1.jpg" alt="">
+                        <div class="px-2">
+                            <p class="name-chat">Michele</p>
+                            <p class="sub-chat">ultimo messaggio</p>
+
+                        </div>
+                    </div>
+                    <div class="ora">
+                        <p>ora</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="left">
+            <div class="sfondoUser d-flex align-items-center justify-content-between">
+                <section class="user d-flex align-items-center">
+                    <img src="./img/avatar_1.jpg" alt="Io" class="cerchio">
+                    <p class=" user-name-io align-items-center">Sofia</p>
+                </section>
+                <section class="utility-user mx-3">
+                    <i class="fa-solid fa-magnifying-glass mx-2"></i>
+                    <i class="fa-solid fa-paperclip mx-2"></i>
+                    <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+                </section>
+            </div>
+            <div class="main-body ">
+                <div class="messages  d-flex flex-column pt-5">
+                    <div class="message-recived">
+                        <p>Ciaoa</p>
+                        <p class="ora-message">ora</p>
+                    </div>
+                    <div class="message-sent">
+                        <p>Ciao</p>
+                        <p class="ora-message">ora</p>
+                    </div>
+
+                </div>
+                <div class="invio-messaggio">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio ">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 </body>
 
