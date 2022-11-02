@@ -112,11 +112,12 @@ p {
 
 .chats {
     height: calc(100% - 188px);
+    overflow-y: auto;
 }
 
 .chat {
     height: 80px;
-    border: 1px solid black;
+    border-top: 1px solid var(--grigioSfondo);
 }
 
 .sub-chat {
@@ -129,6 +130,7 @@ p {
     background-image: url('../img/mine.jpg');
     height: calc(100% - 80px);
     position: relative;
+    overflow-y: auto;
 
 }
 

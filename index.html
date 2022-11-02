@@ -45,12 +45,13 @@
                 <input type="text" class="my-input" placeholder="">
             </section>
             <section class="chats">
-                <div class="chat d-flex justify-content-between align-items-center">
+                <div @click="getChat(indici)" v-for="(item,indici) in contacts"
+                    class="chat d-flex justify-content-between align-items-center">
                     <div class="d-flex px-3">
-                        <img src="./img/avatar_1.jpg" alt="">
+                        <img :src="item.image" alt="">
                         <div class="px-2">
-                            <p class="name-chat">Michele</p>
-                            <p class="sub-chat">ultimo messaggio</p>
+                            <p class="name-chat">{{item.name}}</p>
+                            <p class="sub-chat">Ultimo messaggio</p>
 
                         </div>
                     </div>
@@ -77,15 +78,13 @@
                 </section>
             </div>
             <div class="main-body ">
-                <div class="messages  d-flex flex-column pt-5">
-                    <div class="message-recived">
-                        <p>Ciaoa</p>
-                        <p class="ora-message">ora</p>
+                <div v-for="(message,index) in contacts[currentChat].messages"
+                    class="messages  d-flex flex-column pt-5">
+                    <div :class="[(message.status === 'sent') ? 'message-sent':'message-recived']">
+                        <p>{{message.message}}</p>
+                        <p class="ora-message">{{message.date}}</p>
                     </div>
-                    <div class="message-sent">
-                        <p>Ciao</p>
-                        <p class="ora-message">ora</p>
-                    </div>
+
 
                 </div>
                 <div class="invio-messaggio">
