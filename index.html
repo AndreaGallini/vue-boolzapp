@@ -19,7 +19,7 @@
 <body class="container-fluid vh-100 my-background">
     <div id="app" class="container-md my-container p-0 d-flex">
 
-        <div class="right">
+        <div class="left">
             <div class="sfondoUser d-flex align-items-center justify-content-between">
                 <section class="user d-flex align-items-center">
                     <img src="./img/avatar_io.jpg" alt="Io" class="cerchio">
@@ -61,12 +61,12 @@
                 </div>
             </section>
         </div>
-        <div class="left">
+        <div class="right">
             <div class="sfondoUser d-flex align-items-center justify-content-between">
                 <section class="user d-flex align-items-center">
-                    <img src="./img/avatar_1.jpg" alt="Io" class="cerchio">
+                    <img :src="contacts[currentChat].image" alt="Io" class="cerchio">
                     <div>
-                        <p class=" user-name-io align-items-center">Sofia</p>
+                        <p class=" user-name-io align-items-center">{{contacts[currentChat].name}}</p>
                         <p class="sub-chat">Ultimo accesso</p>
 
                     </div>
