@@ -16,8 +16,8 @@
     <title>Document</title>
 </head>
 
-<body class="container-fluid vh-100 my-background">
-    <div id="app" class="container-md my-container p-0 d-flex">
+<body class="container-fluid vh-100 my-background d-flex align-items-center justify-content-center">
+    <div id="app" class="container-md my-container p-0 d-flex align-items-center justify-content-center">
 
         <div class="left">
             <div class="sfondoUser d-flex align-items-center justify-content-between">
@@ -45,18 +45,19 @@
                 <input type="text" class="my-input" placeholder="">
             </section>
             <section class="chats">
-                <div @click="getChat(indici)" v-for="(item,indici) in contacts"
+                <div @click="getChat(item.id)" :class="{ 'myactive' : indici === currentChat}"
+                    v-for="(item,indici) in contacts" :key="item.id"
                     class="chat d-flex justify-content-between align-items-center">
                     <div class="d-flex px-3">
                         <img :src="item.image" alt="">
                         <div class="px-2">
                             <p class="name-chat">{{item.name}}</p>
-                            <p class="sub-chat">Ultimo messaggio</p>
+                            <p class="sub-chat">{{item.messages[item.messages.length -1].message}}</p>
 
                         </div>
                     </div>
                     <div class="ora">
-                        <p>ora</p>
+                        <p>{{item.messages[item.messages.length -1].date}}</p>
                     </div>
                 </div>
             </section>
@@ -67,7 +68,9 @@
                     <img :src="contacts[currentChat].image" alt="Io" class="cerchio">
                     <div>
                         <p class=" user-name-io align-items-center">{{contacts[currentChat].name}}</p>
-                        <p class="sub-chat">Ultimo accesso</p>
+                        <p class="sub-chat">Ultimo accesso
+                            {{contacts[currentChat].messages[contacts[currentChat].messages.length
+                            -1].date}}</p>
 
                     </div>
                 </section>
@@ -87,13 +90,15 @@
 
 
                 </div>
-                <div class="invio-messaggio">
-                    <i class="fa-regular fa-face-smile"></i>
-                    <input @keyup.enter="sendMessage" v-model="myMessage" type="text"
-                        placeholder="Scrivi un messaggio ">
-                    <i class="fa-solid fa-microphone"></i>
-                </div>
+
             </div>
+            <div class="invio-messaggio">
+                <i class="fa-regular fa-face-smile"></i>
+                <input @keyup.enter="sendMessage" v-model="myMessage" type="text" placeholder="Scrivi un messaggio ">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+
+
 
 
         </div>
