@@ -6,6 +6,7 @@ createApp({
             myMessage: '',
             currentChat: 0,
             search: '',
+            modale: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -192,6 +193,10 @@ createApp({
                     ],
                 }
             ],
+            risposteRandomiche: [
+                'Non sono convinto', 'Sei forte', 'Che ne so?', 'Si ma stai calmo!', 'Brindo alla tua!',
+                'Ma chi sei?', 'Buongiorno', 'Raccontami', ':)', 'Non ho voglia di parlare con te oggi', 'ti sei fatto la doccia?'
+            ],
 
         }
     },
@@ -214,12 +219,12 @@ createApp({
             this.contacts[this.currentChat].messages.push(newSendMessage)
             this.myMessage = '';
             setTimeout(() => {
-
+                let rispostaRandom = Math.floor(Math.random() * this.risposteRandomiche.length);
                 const d = new Date();
                 let newd = d.toLocaleDateString();
                 const newSendMessage = {
                     date: newd,
-                    message: 'ciao',
+                    message: this.answer[rispostaRandom],
                     status: 'received'
                 }
                 this.contacts[this.currentChat].messages.push(newSendMessage)
@@ -234,6 +239,8 @@ createApp({
         },
 
 
+
+
     },
     computed: {
         filtroContatti() {
@@ -242,5 +249,6 @@ createApp({
                 return name.includes(this.search.toLowerCase());
             })
         },
+
     },
 }).mount('#app')

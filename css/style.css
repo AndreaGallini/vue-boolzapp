@@ -137,7 +137,7 @@ p {
 
 .message-sent {
     background-color: var(--sfondoInviati);
-    width: 300px;
+    width: 350px;
     height: auto;
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@ p {
 
 .message-recived {
     background-color: white;
-    width: 300px;
+    width: 350px;
     height: auto;
     display: flex;
     align-items: center;
@@ -201,6 +201,16 @@ p {
     background-color: var(--grigioSfondoInterno);
     cursor: pointer;
 }
+
+.d-none {
+    display: none;
+}
+
+.my-air {
+    cursor: pointer;
+}
+
+
 
 @media screen and (max-width:700px) {
     .left {

@@ -75,7 +75,9 @@
                 </section>
                 <section class="utility-user mx-3">
                     <i class="fa-solid fa-magnifying-glass mx-2"></i>
+
                     <i class="fa-solid fa-paperclip mx-2"></i>
+
                     <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
                 </section>
             </div>
@@ -83,6 +85,7 @@
                 <div v-for="(message,index) in contacts[currentChat].messages"
                     class="messages  d-flex flex-column pt-5 pb-3">
                     <div :class="[(message.status === 'sent') ? 'message-sent':'message-recived']">
+
                         <p>{{message.message}}</p>
                         <p class="ora-message">{{message.date}}</p>
                     </div>
@@ -96,6 +99,7 @@
                 <input @keyup.enter="sendMessage" v-model.trim="myMessage" type="text"
                     placeholder="Scrivi un messaggio ">
                 <i class="fa-solid fa-microphone"></i>
+                <i @click="sendMessage" class="fa-regular fa-paper-plane my-air"></i>
             </div>
 
 
