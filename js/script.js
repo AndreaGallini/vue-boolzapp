@@ -196,7 +196,7 @@ createApp({
     methods: {
         getChat(id) {
             this.currentChat = this.contacts.findIndex((item) => {
-                return id === item.id
+                return item.id === id
             })
             console.log(id)
         },
@@ -207,6 +207,7 @@ createApp({
                 message: this.myMessage,
                 status: 'sent'
             })
+            this.myMessage = '';
         },
 
     }
