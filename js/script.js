@@ -5,6 +5,7 @@ createApp({
         return {
             myMessage: '',
             currentChat: 0,
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -190,7 +191,8 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
         }
     },
     methods: {
@@ -201,14 +203,44 @@ createApp({
             console.log(id)
         },
         sendMessage() {
-            activeContact = this.contacts[this.currentChat]
-            activeContact.messages.push({
-                date: '10/10/2022',
+
+            const d = new Date();
+            let newd = d.toLocaleDateString();
+            const newSendMessage = {
+                date: newd,
                 message: this.myMessage,
                 status: 'sent'
-            })
+            }
+            this.contacts[this.currentChat].messages.push(newSendMessage)
             this.myMessage = '';
+            setTimeout(() => {
+
+                const d = new Date();
+                let newd = d.toLocaleDateString();
+                const newSendMessage = {
+                    date: newd,
+                    message: 'ciao',
+                    status: 'received'
+                }
+                this.contacts[this.currentChat].messages.push(newSendMessage)
+            }, 1000);
+        },
+        lastMessage(item) {
+            const msg = item.messages.filter((message) => {
+                return message.status === 'received';
+            })
+            console.log(msg)
+            return msg[msg.length - 1];
         },
 
-    }
+
+    },
+    computed: {
+        filtroContatti() {
+            return this.contacts.filter((item) => {
+                const name = item.name.toLowerCase();
+                return name.includes(this.search.toLowerCase());
+            })
+        },
+    },
 }).mount('#app')

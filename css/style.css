@@ -103,7 +103,7 @@ p {
 .ora {
     display: flex;
     align-self: flex-start;
-    font-size: 12px;
+    font-size: 10px;
     color: var(--grigioIcone);
     padding-right: 10px;
     padding-top: 5px;
@@ -200,4 +200,20 @@ p {
 .chat:hover {
     background-color: var(--grigioSfondoInterno);
     cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .left {
+        width: 30%;
+    }
+
+    .meno576 {
+        display: none;
+        overflow-x: hidden;
+
+    }
+
+    .right {
+        width: 70%;
+    }
 }
