@@ -82,7 +82,7 @@
             </div>
             <div class="main-body ">
                 <div v-for="(message,index) in contacts[currentChat].messages"
-                    class="messages  d-flex flex-column pt-5 pb-3">
+                    class="messages  d-flex flex-column pt-5 pb-3" ref="msg">
                     <div :class="[(message.status === 'sent') ? 'message-sent':'message-recived']">
                         <i class="fa-solid fa-angle-down my-position" @click="showOption(index)"></i>
                         <div class="position-absolute my-f-xs delete" v-if="msgOpt.index === index && msgOpt.show">

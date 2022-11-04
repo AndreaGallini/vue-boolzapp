@@ -216,7 +216,7 @@ createApp({
         sendMessage() {
 
             const d = new Date();
-            let newd = d.toLocaleDateString();
+            let newd = d.toLocaleTimeString();
             const newSendMessage = {
                 date: newd,
                 message: this.myMessage,
@@ -224,16 +224,24 @@ createApp({
             }
             this.contacts[this.currentChat].messages.push(newSendMessage)
             this.myMessage = '';
+            this.$nextTick(() => {
+                const el = this.$refs.msg[this.$refs.msg.length - 1];
+                el.scrollIntoView();
+            })
             setTimeout(() => {
                 let rispostaRandom = Math.floor(Math.random() * this.risposteRandomiche.length);
                 const d = new Date();
-                let newd = d.toLocaleDateString();
+                let newd = d.toLocaleTimeString();
                 const newSendMessage = {
                     date: newd,
                     message: this.risposteRandomiche[rispostaRandom],
                     status: 'received'
                 }
                 this.contacts[this.currentChat].messages.push(newSendMessage)
+                this.$nextTick(() => {
+                    const el = this.$refs.msg[this.$refs.msg.length - 1];
+                    el.scrollIntoView();
+                })
             }, 1000);
         },
         lastMessage(item) {
