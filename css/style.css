@@ -239,6 +239,34 @@ p {
     right: 10px;
 }
 
+.icons {
+    position: relative;
+}
+
+.my-smile {
+    cursor: pointer;
+}
+
+.my-pointer {
+    cursor: pointer;
+}
+
+.emoji {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    z-index: 1000;
+    width: 300px;
+    height: 200px;
+    background-color: var(--grigioSfondoInterno);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.emoji span {
+    padding: 5px;
+}
+
 
 
 

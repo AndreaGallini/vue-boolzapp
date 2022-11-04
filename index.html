@@ -100,7 +100,15 @@
 
             </div>
             <div class="invio-messaggio">
-                <i class="fa-regular fa-face-smile"></i>
+                <div class="icons">
+                    <i class="fa-regular fa-face-smile my-smile" @click="showEmoji"></i>
+                    <div v-if="showemoji" class="emoji">
+                        <span class="my-pointer" v-for="(icon,indice) in icons" :key="indice" v-html="icon"
+                            @click="addEmoji(indice)"></span>
+                    </div>
+
+                </div>
+
                 <input @keyup.enter="sendMessage" v-model.trim="myMessage" type="text"
                     placeholder="Scrivi un messaggio ">
                 <i class="fa-solid fa-microphone"></i>
