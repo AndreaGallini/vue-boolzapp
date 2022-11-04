@@ -7,6 +7,14 @@ createApp({
             currentChat: 0,
             search: '',
             modale: null,
+            currentMessage: '',
+            currentId: 0,
+            activIndex: 0,
+            msgOpt: {
+                index: null,
+                show: false
+            },
+
             contacts: [
                 {
                     name: 'Michele',
@@ -237,6 +245,31 @@ createApp({
             console.log(msg)
             return msg[msg.length - 1];
         },
+
+        showMessageMenu(i) {
+
+            if (this.currentMessage !== i) {
+                this.currentMessage = i;
+            } else {
+                this.currentMessage = '';
+            }
+
+        },
+        removeMsg(i) {
+            this.contacts[this.activIndex].messages.splice(i, 1);
+
+        },
+        showOption(i) {
+            if (i === this.msgOpt.index && this.msgOpt.show) {
+                this.msgOpt.index = null;
+                this.msgOpt.show = false;
+            } else {
+                this.msgOpt.index = i;
+                this.msgOpt.show = true;
+            }
+        }
+
+
 
 
 

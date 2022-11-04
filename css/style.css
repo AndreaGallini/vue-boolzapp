@@ -147,6 +147,7 @@ p {
     align-self: flex-end;
     margin-right: 30px;
     min-height: 50px;
+    position: relative;
 
 }
 
@@ -162,6 +163,7 @@ p {
     align-self: flex-start;
     margin-left: 30px;
     min-height: 50px;
+    position: relative;
 }
 
 .ora-message {
@@ -209,6 +211,56 @@ p {
 .my-air {
     cursor: pointer;
 }
+
+.my-position {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dropbtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 10px;
+    border: none;
+}
+
+.message-menu {
+    background-color: #fff;
+    min-width: 160px;
+    border-radius: 6px;
+    position: absolute;
+    right: 4px;
+    top: 28px;
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+
+.message-menu ul {
+    list-style: none;
+}
+
+
+.message-menu ul li {
+    padding: 6px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.message-menu ul li:hover {
+    background-color: #EAEAEA;
+}
+
+
+.showmenu {
+    display: block;
+}
+
+
 
 
 
