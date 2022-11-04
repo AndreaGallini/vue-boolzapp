@@ -8,10 +8,60 @@ createApp({
             search: '',
             currentId: 0,
             activIndex: 0,
+            showemoji: false,
+            showdel: false,
             msgOpt: {
                 index: null,
                 show: false
             },
+            icons: [
+                '&#128512;',
+                '&#128513;',
+                '&#128514;',
+                '&#128515;',
+                '&#128516;',
+                '&#128517;',
+                '&#128518;',
+                '&#128519;',
+                '&#128521;',
+                '&#128522;',
+                '&#128523;',
+                '&#128524;',
+                '&#128525;',
+                '&#128526;',
+                '&#128528;',
+                '&#128529;',
+                '&#128530;',
+                '&#128536;',
+                '&#128545;',
+                '&#128548;',
+                '&#128561;',
+                '&#129315;',
+                '&#129299;',
+                '&#129319;',
+                '&#129321;',
+                '&#129325;',
+                '&#129488;',
+                '&#9996;',
+                '&#9995;',
+                '&#10024;',
+                '&#10062;',
+                '&#128064;',
+                '&#128077;',
+                '&#128079;',
+                '&#128152;',
+                '&#128149;',
+                '&#128156;',
+                '&#128158;',
+                '&#128584;',
+                '&#129310;',
+                '&#129505;',
+                '&#127802;',
+                '&#127801;',
+                '&#9749;',
+                '&#128520;',
+
+            ],
 
             contacts: [
                 {
@@ -200,8 +250,10 @@ createApp({
                 }
             ],
             risposteRandomiche: [
-                'Non sono convinto', 'Sei forte', 'Che ne so?', 'Si ma stai calmo!', 'Brindo alla tua!',
-                'Ma chi sei?', 'Buongiorno', 'Raccontami', ':)', 'Non ho voglia di parlare con te oggi', 'ti sei fatto la doccia?'
+                'Non sono convinto ', 'Sei forte', 'Che ne so?', 'Si ma stai calmo!', 'Brindo alla tua!',
+                'Ma chi sei?', 'Buongiorno', 'Raccontami', ':)', 'Non ho voglia di parlare con te oggi', 'ti sei fatto la doccia?',
+                'È così.', 'Sì, certamente.', 'In che senso dici?', 'Perché no?', 'È giustissimo.'
+
             ],
 
         }
@@ -268,8 +320,21 @@ createApp({
                 this.msgOpt.index = i;
                 this.msgOpt.show = true;
             }
-        }
+        },
+        showEmoji() {
+            this.showemoji = !this.showemoji
+        },
+        addEmoji(i) {
+            this.myMessage += this.icons[i]
+        },
+        deleteChat(i) {
+            this.contacts[this.currentChat].messages.splice(i);
+            this.showdel = false;
+        },
+        showDelete() {
+            this.showdel = !this.showdel
 
+        }
 
 
 
