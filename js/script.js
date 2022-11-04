@@ -241,6 +241,9 @@ createApp({
                 return message.status === 'received';
             })
             console.log(msg)
+            if (msg.length < 1) {
+                return ''
+            }
             return msg[msg.length - 1];
         },
 
