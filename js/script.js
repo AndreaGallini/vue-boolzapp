@@ -9,6 +9,7 @@ createApp({
             currentId: 0,
             activIndex: 0,
             showemoji: false,
+            showdel: false,
             msgOpt: {
                 index: null,
                 show: false
@@ -326,6 +327,14 @@ createApp({
         addEmoji(i) {
             this.myMessage += this.icons[i]
         },
+        deleteChat(i) {
+            this.contacts[this.currentChat].messages.splice(i);
+            this.showdel = false;
+        },
+        showDelete() {
+            this.showdel = !this.showdel
+
+        }
 
 
 

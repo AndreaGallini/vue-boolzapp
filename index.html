@@ -76,8 +76,12 @@
                     <i class="fa-solid fa-magnifying-glass mx-2"></i>
 
                     <i class="fa-solid fa-paperclip mx-2"></i>
-
-                    <i class="fa-solid fa-ellipsis-vertical mx-2"></i>
+                    <div class="del">
+                        <i class="fa-solid fa-ellipsis-vertical mx-2 my-delete" @click="showDelete"></i>
+                        <div v-if="showdel" class="deleteAllMessages">
+                            <p @click="deleteChat(index)">Cancella l'intera Chat</p>
+                        </div>
+                    </div>
                 </section>
             </div>
             <div class="main-body ">

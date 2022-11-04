@@ -267,10 +267,41 @@ p {
     border-radius: 20px;
 }
 
+.deleteAllMessages {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 1000;
+    width: 200px;
+    height: 50px;
+    background-color: var(--grigioSfondoInterno);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.del {
+    width: 10px;
+    display: inline-block;
+    position: relative;
+}
+
 .emoji span {
     padding: 5px;
 }
 
+.my-delete {
+    cursor: pointer;
+}
+
+.deleteAllMessages p {
+    cursor: pointer;
+}
+
+.deleteAllMessages p:hover {
+    cursor: pointer;
+    background-color: var(--grigioIcone);
+    border: 20px;
+}
 
 @media screen and (max-width:700px) {
     .left {
