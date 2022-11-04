@@ -58,7 +58,8 @@ createApp({
                 '&#127802;',
                 '&#127801;',
                 '&#9749;',
-                '&#128520;'
+                '&#128520;',
+
             ],
 
             contacts: [
@@ -249,7 +250,9 @@ createApp({
             ],
             risposteRandomiche: [
                 'Non sono convinto', 'Sei forte', 'Che ne so?', 'Si ma stai calmo!', 'Brindo alla tua!',
-                'Ma chi sei?', 'Buongiorno', 'Raccontami', ':)', 'Non ho voglia di parlare con te oggi', 'ti sei fatto la doccia?'
+                'Ma chi sei?', 'Buongiorno', 'Raccontami', ':)', 'Non ho voglia di parlare con te oggi', 'ti sei fatto la doccia?',
+                'È così.', 'Sì, certamente.', 'In che senso dici?', 'Perché no?', 'È giustissimo.'
+
             ],
 
         }
