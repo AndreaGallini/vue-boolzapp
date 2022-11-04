@@ -95,7 +95,7 @@
                                 <div class="p-1" @click="removeMsg(index)">Cancella messaggi</div>
                             </div>
                         </div>
-                        <p>{{message.message}}</p>
+                        <p v-html="message.message"></p>
                         <p class="ora-message">{{message.date}}</p>
                     </div>
 
