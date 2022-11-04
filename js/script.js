@@ -224,7 +224,7 @@ createApp({
                 let newd = d.toLocaleDateString();
                 const newSendMessage = {
                     date: newd,
-                    message: this.answer[rispostaRandom],
+                    message: this.risposteRandomiche[rispostaRandom],
                     status: 'received'
                 }
                 this.contacts[this.currentChat].messages.push(newSendMessage)
