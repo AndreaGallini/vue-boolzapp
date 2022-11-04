@@ -84,12 +84,12 @@
                 <div v-for="(message,index) in contacts[currentChat].messages"
                     class="messages  d-flex flex-column pt-5 pb-3">
                     <div :class="[(message.status === 'sent') ? 'message-sent':'message-recived']">
-                        <i class="fa-solid fa-angle-down my-position" @click="showMessageMenu(index, element)"></i>
-                        <div class="message-menu" :class="index === currentMessage ? 'showmenu' : ''">
-                            <ul>
-                                <li>Message info</li>
-                                <li @click="removeMsg(index)">Delete message</li>
-                            </ul>
+                        <i class="fa-solid fa-angle-down my-position" @click="showOption(index)"></i>
+                        <div class="position-absolute my-f-xs delete" v-if="msgOpt.index === index && msgOpt.show">
+                            <div class="position-absolute box-menu">
+                                <div class="p-1">Info messaggio</div>
+                                <div class="p-1" @click="removeMsg(index)">Cancella messaggi</div>
+                            </div>
                         </div>
                         <p>{{message.message}}</p>
                         <p class="ora-message">{{message.date}}</p>

@@ -6,8 +6,6 @@ createApp({
             myMessage: '',
             currentChat: 0,
             search: '',
-            modale: null,
-            currentMessage: '',
             currentId: 0,
             activIndex: 0,
             msgOpt: {
@@ -246,15 +244,7 @@ createApp({
             return msg[msg.length - 1];
         },
 
-        showMessageMenu(i) {
 
-            if (this.currentMessage !== i) {
-                this.currentMessage = i;
-            } else {
-                this.currentMessage = '';
-            }
-
-        },
         removeMsg(i) {
             this.contacts[this.activIndex].messages.splice(i, 1);
 

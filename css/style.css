@@ -218,46 +218,25 @@ p {
     right: 10px;
 }
 
-.dropbtn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    font-size: 10px;
-    border: none;
+.my-f-xs {
+    font-size: var(--font-xs);
 }
 
-.message-menu {
-    background-color: #fff;
-    min-width: 160px;
-    border-radius: 6px;
-    position: absolute;
-    right: 4px;
-    top: 28px;
-    display: none;
-    overflow: hidden;
-    z-index: 1000;
-}
-
-
-.message-menu ul {
-    list-style: none;
-}
-
-
-.message-menu ul li {
-    padding: 6px 12px;
+.box-menu {
+    background-color: var(--grigioSfondo);
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    padding: 0 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    top: 20px;
+    right: 0;
     cursor: pointer;
-    border-bottom: 1px solid #EAEAEA;
 }
 
-.message-menu ul li:hover {
-    background-color: #EAEAEA;
-}
-
-
-.showmenu {
-    display: block;
+.delete {
+    top: 5px;
+    right: 10px;
 }
 
 
