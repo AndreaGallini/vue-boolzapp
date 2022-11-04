@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="ora meno576">
-                        <p>{{ lastMessage(item).date}}</p>
+                        <p>{{lastMessage(item).date}}</p>
                     </div>
                 </div>
             </section>
@@ -68,8 +68,7 @@
                     <div>
                         <p class=" user-name-io align-items-center">{{contacts[currentChat].name}}</p>
                         <p class="sub-chat">Ultimo accesso
-                            {{ contacts[currentChat].messages.length > 0 ? lastMessage(contacts[currentChat]).date :
-                            'Non pervenuto' }}</p>
+                            {{lastMessage(contacts[currentChat]).date}}</p>
 
                     </div>
                 </section>
@@ -92,8 +91,8 @@
                                 <div class="p-1" @click="removeMsg(index)">Cancella messaggi</div>
                             </div>
                         </div>
-                        <p>{{ contacts[currentChat].messages.length > 0 ? message.message : ''}}</p>
-                        <p class="ora-message">{{ contacts[currentChat].messages.length > 0 ? message.date : ''}}</p>
+                        <p>{{message.message}}</p>
+                        <p class="ora-message">{{message.date}}</p>
                     </div>
 
 

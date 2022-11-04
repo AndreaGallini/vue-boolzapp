@@ -237,8 +237,8 @@ createApp({
             }, 1000);
         },
         lastMessage(item) {
-            const msg = item.messages.filter((message) => {
-                return message.status === 'received';
+            let msg = item.messages.filter((message) => {
+                return message.status === 'received', 'sent';
             })
             console.log(msg)
             if (msg.length < 1) {
@@ -249,7 +249,7 @@ createApp({
 
 
         removeMsg(i) {
-            this.contacts[this.activIndex].messages.splice(i, 1);
+            this.contacts[this.currentChat].messages.splice(i, 1);
 
         },
         showOption(i) {
